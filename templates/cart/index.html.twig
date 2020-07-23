@@ -6,6 +6,43 @@
     <div class="bg-light p-3">
         <h1>Votre panier</h1>
     </div>
+    {% if items | length >0 %}
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Show</th>
+                    <th>Price</th>
+                    <th>quantity</th>
+                    <th>total</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for item in items %}
+                <tr>
+                    <td>{{ item.politico.title }}</td>
+                    <td>{{ item.politico.price }}</td>
+                    <td>{{ item.quantity }}</td>
+                    <td>{{ item.politico.price * item.quantity }}</td>
 
-    <p>Surprise, c'est vide !</p>
+                    <td>
+                        <a href="{{ path('cart_delete', {'id': item.politico.id}) }}" class="btn btn-danger btn-sm">
+                            <i class="fas fa-trash"></i>
+                        </a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+           <tfoot>
+               <tr>
+                   <td colspan="3 text-right">Total</td>
+                   <td> {{ total }}</td>
+                   <td></td>
+               </tr>
+           </tfoot>
+        </table>
+    {% else  %}
+        <p>Surprise, c'est vide !</p>
+    {% endif %}
+
 {% endblock %}

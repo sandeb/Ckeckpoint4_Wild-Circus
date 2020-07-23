@@ -2,18 +2,54 @@
 
 namespace App\Controller;
 
+
+use App\Service\Cart\CartService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
+
 
 class CartController extends AbstractController
 {
     /**
      * @Route("/cart", name="cart")
      */
-    public function index()
+    public function index(CartService $cartService)
     {
+        $cartWithData =$cartService->getFullCart();
+        dd($cartWithData);
+        $total =$cartService->getTotal();
+
+
         return $this->render('cart/index.html.twig', [
-            'controller_name' => 'CartController',
+            'items' => $cartWithData,
+            'total' => $total
         ]);
+
+    }
+
+    /**
+     * @Route("/cart/add/{id}", name="cart_add")
+     */
+    public function add($id,CartService $cartService)
+    {
+        $cartService->add($id);
+
+        return $this->redirectToRoute('show');
+    }
+
+    /**
+     * @Route("/cart/delete/{id}", name="cart_delete")
+     *
+     */
+    public function delete($id, CartService $cartService)
+    {
+        $cartService->delete($id);
+
+        return $this->redirectToRoute("cart");
     }
 }
+
+
+
+
+

@@ -7,30 +7,36 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
             {% if app.user %}
-            <li class="nav-item">
-                <a class="text-white nav-link" href="{{ path('show') }}">MY Show</a>
-            </li>
-            <li class="nav-item">
-                <a class="text-white nav-link" href="{{ path('cart') }}">MY Cart</a>
-            </li>
+                <li class="nav-item text-white active nav-link">
+                    You are logged in as {{ app.user.email }}
+                </li>
+                 <li class=" nav-item active">
+                     <a class="text-white nav-link" href="{{ path('show') }}">SHow</a>
+                 </li>
+                 <li class="nav-item">
+                    <a class="text-white nav-link" href="{{ path('show') }}">MY Show</a>
+                 </li>
+                 <li class=" nav-item active">
+                     <a class="text-white nav-link" href="{{ path('cart') }}"><i class="fas fa-shopping-cart"></i></a>
+                 </li>
             {% else %}
-            <li class=" nav-item active">
-                <a class="text-white nav-link" href="">Home</a>
-            </li>
-            <li class=" nav-item active">
-                <a class="text-white nav-link" href="{{ path('show') }}">SHow</a>
-            </li>
-            <li class=" nav-item active">
-                <a class="text-white nav-link" href="">Contact</a>
-            </li>
-             <li class=" nav-item active">
-                 <a class="text-white nav-link" href="{{path('app_login')}}">Login</a>
-             </li>
+                 <li class=" nav-item active">
+                    <a class="text-white nav-link" href="">Home</a>
+                 </li>
+                 <li class=" nav-item active">
+                    <a class="text-white nav-link" href="{{ path('show') }}">SHow</a>
+                 </li>
+                 <li class=" nav-item active">
+                    <a class="text-white nav-link" href="">Contact</a>
+                 </li>
+                 <li class=" nav-item active">
+                     <a class="text-white nav-link" href="{{path('app_login')}}">Login</a>
+                 </li>
             {% endif %}
             {% if app.user == true %}
-            <li class=" nav-item active">
-                <a class="text-white nav-link" href="{{path('app_logout')}}">Logout</a>
-            </li>
+                 <li class=" nav-item active">
+                    <a class="text-white nav-link" href="{{path('app_logout')}}">Logout</a>
+                 </li>
             {% endif %}
 
         </ul>
