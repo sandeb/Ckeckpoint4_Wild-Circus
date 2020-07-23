@@ -2,7 +2,10 @@
 
 namespace App\Controller;
 
-
+use App\Entity\User;
+use App\Repository\UserRepository;
+use App\Entity\Politico;
+use App\Repository\PoliticoRepository;
 use App\Service\Cart\CartService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
@@ -16,7 +19,7 @@ class CartController extends AbstractController
     public function index(CartService $cartService)
     {
         $cartWithData =$cartService->getFullCart();
-        dd($cartWithData);
+
         $total =$cartService->getTotal();
 
 
@@ -47,6 +50,18 @@ class CartController extends AbstractController
 
         return $this->redirectToRoute("cart");
     }
+
+    /**
+     * @Route("/cart/buy", name="cart_buy")
+     *
+     */
+    public function video(CartService $cartService)
+    {
+        $cart=$this->session->get('cart',[]);
+
+        dd($cart);
+    }
+
 }
 
 

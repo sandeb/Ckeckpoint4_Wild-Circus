@@ -17,4 +17,6 @@ class PoliticoController extends AbstractController
             'politicos' => $politicoRepository->findAll()
         ]);
     }
+
+
 }
