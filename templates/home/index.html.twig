@@ -1,2 +1,263 @@
 {% extends 'base.html.twig' %}
 
+{% block title %} Accueil{% endblock %}
+{% block body %}
+<div class="container">
+    <div style="height: 100px"></div>
+        <div class="col-12">
+            <h1>Welcome TO The Wild Circus</h1>
+            <img class="img-fluid shadow-effect rounded" src="assets/images/jungle_LG.jpg" alt=""
+                     style="width: 100%; max-height: 250px;"
+            >
+         </div>
+    </div>
+</div>
+    <div class="container-fluid home-section p-5">
+        <div class="container">
+            <div data-aos="zoom-in-up"
+                 data-aos-duration="1000"
+                 data-aos="flip-up"
+                 data-aos-easing="ease-out-cubic"
+                 data-aos-duration="2000">
+                <div class="row my-5 border rounded  bg-mauve shadow-effect">
+                    <div class="col-12 text-center my-5">
+                        <h3 class="title-page">Qu'est-ce que cela va t'apporter ?</h3>
+                    </div>
+                    <div class="col-12 text-medium-size text-white" style="font-size: 20px;">
+                        <p>
+                            Quel que soit ton âge, tu as déjà des talents des compétences, des savoir-faire,
+                            mais aussi des besoins, des valeurs, des envies qui font que tu es UNIQUE.
+                            Ces éléments constituent ton socle, les fondations sur lesquelles tu peux
+                            t'appuyer pour construire ton avenur et faire les choix les choix qui sont bons pour toi.
+                        </p>
+                        <p>
+                            De là l'importance de les connaître ! Tu l'auras compris, c'est le but des défis que
+                            nous avons imaginés pour toi : Apprendre à mieux te connaître, pour développer
+                            ta confiance en toi et pouvoir te propulser avec confiance, ambition et plaisir
+                            dans le monde qui t'attend !
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="container">
+    <div class="row my-5 border rounded p-5 bg-yellow shadow-effect">
+        <div class="col-12 text-center my-5">
+            <h2 class="title-page">The Owners</h2>
+        </div>
+        <div class="row">
+
+            <div class="col-lg-4 col-md-4 col-xs-12 my-3">
+                <div class="card  hvr-bounce-in" style="height: 250px">
+                    <img class="card-img-top" src="assets/images/girafe.jpg"
+                         alt="" class="img-fluid">
+                <div class="card-body">
+                        <h5 class="card-title text-center text-bolder text-uppercase text-info">Astrid</h5>
+                                {# <a href="#" class="btn btn-primary">ICI CTA</a> #}
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4 col-xs-12 my-3">
+                <div class="card  hvr-bounce-in" style="height: 200px">
+                    <img class="card-img-top" src="assets/images/Panthere.jpg"
+                         alt="" class="img-fluid">
+                    <div class="card-body">
+                                <h5 class="card-title text-center text-bolder text-uppercase text-info">Marianne</h5>
+                                {# <a href="#" class="btn btn-primary">ICI CTA</a> #}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div class="banner">
+    <div class="container">
+        <div class="banner-text">
+            <div class="banner-heading">
+                <h1>
+                    <img src="{{ asset('assets/images/brand_horizontal.png') }}" width="600px" class="img-fluid"
+                         alt="youmoro">
+                </h1>
+            </div>
+
+            <div data-aos="zoom-in-up" data-aos-duration="1000">
+                <div class="banner-sub-heading first-title text-uppercase">
+                    Des challenges pour un futur dont tu es le héros !
+                </div>
+                <div class="banner-sub-body second-title text-uppercase">
+                    <ul>
+                        <li>Une App mobile</li>
+                        <li>Pour relever tous les défis</li>
+                        <li>Et prendre le pouvoir sur ton avenir !</li>
+                    </ul>
+                    <hr>
+                </div>
+            </div>
+            {% if app.user == false %}
+                <div class="">
+                    <a href="{{path('app_login')}}" class="btn btn-cta text-uppercase font-weight-bold hvr-bounce-in animate__animated animate__bounce">C'est parti !</a>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+    </div>
+    <div class="container">
+        <div data-aos="zoom-in-up"
+             data-aos-duration="1000"
+             data-aos="flip-up"
+             data-aos-easing="ease-out-cubic"
+             data-aos-duration="2000">
+            <div class="row my-5 border rounded p-5 bg-yellow shadow-effect">
+                <div class="col-12 text-center my-5">
+                    <h3 class="title-page">Comment ?</h3>
+                </div>
+                <div class="col-12 sub-title-page text-center">
+                    <h4 class="text-bolder text-uppercase text-mauve mb-5">À travers des défis pour atteindre 3 grands
+                        objectifs</h4>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-xs-12 my-3">
+                        <div class="card  hvr-bounce-in" style="height: 310px">
+                            <img class="card-img-top" src="{{ asset('assets/images/home_page/woman.png') }}"
+                                 alt="youmoro_image" class="img-fluid">
+                            <div class="card-body">
+                                <h5 class="card-title text-center text-bolder text-uppercase">Mieux te connaître.</h5>
+                                {# <a href="#" class="btn btn-primary">ICI CTA</a> #}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-xs-12 my-3">
+                        <div class="card  hvr-bounce-in" style="height: 310px">
+                            <img class="card-img-top" src="{{ asset('assets/images/home_page/jump.png') }}"
+                                 alt="youmoro_image" class="img-fluid">
+                            <div class="card-body">
+                                <h5 class="card-title text-center text-bolder text-uppercase">Développer ta confiance.</h5>
+                                {# <a href="#" class="btn btn-primary">ICI CTA</a> #}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-xs-12 my-3">
+                        <div class="card  hvr-bounce-in" style="height: 310px">
+                            <img class="card-img-top" src="{{ asset('assets/images/home_page/magnifyingglass.png') }}"
+                                 alt="youmoro_image" class="img-fluid">
+                            <div class="card-body">
+                                <h5 class="card-title text-center text-bolder text-uppercase">Découvrir des métiers
+                                    d'avenir.</h5>
+                                {# <a href="#" class="btn btn-primary">ICI CTA</a> #}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid home-section p-5">
+        <div class="container">
+            <div data-aos="zoom-in-up"
+                 data-aos-duration="1000"
+                 data-aos="flip-up"
+                 data-aos-easing="ease-out-cubic"
+                 data-aos-duration="2000">
+                <div class="row my-5 border rounded  bg-mauve shadow-effect">
+                    <div class="col-12 text-center my-5">
+                        <h3 class="title-page">Qu'est-ce que cela va t'apporter ?</h3>
+                    </div>
+                    <div class="col-12 text-medium-size text-white" style="font-size: 20px;">
+                        <p>
+                            Quel que soit ton âge, tu as déjà des talents des compétences, des savoir-faire,
+                            mais aussi des besoins, des valeurs, des envies qui font que tu es UNIQUE.
+                            Ces éléments constituent ton socle, les fondations sur lesquelles tu peux
+                            t'appuyer pour construire ton avenur et faire les choix les choix qui sont bons pour toi.
+                        </p>
+                        <p>
+                            De là l'importance de les connaître ! Tu l'auras compris, c'est le but des défis que
+                            nous avons imaginés pour toi : Apprendre à mieux te connaître, pour développer
+                            ta confiance en toi et pouvoir te propulser avec confiance, ambition et plaisir
+                            dans le monde qui t'attend !
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div data-aos="zoom-in-up"
+             data-aos-duration="1000"
+             data-aos="flip-up"
+             data-aos-easing="ease-out-cubic"
+             data-aos-duration="2000">
+            <div class="row my-5 border rounded p-5 bg-yellow shadow-effect">
+                <div class="col-12 text-center my-5">
+                    <h3 class="title-page">Qu'est-ce qui t'attend ?</h3>
+                </div>
+                <div class="col-12 text-center text-uppercase mb-5">
+                    <h4 class="text-lg text-mauve text-bolder text-uppercase">Un challenge ludique sur mobile</h4>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-xs-12 my-3">
+                        <div class="card  hvr-bounce-in" style="height: 300px">
+                            <img class="card-img-top" src="{{ asset('assets/images/home_page/dancing.png') }}"
+                                 alt="youmoro_image" class="img-fluid" style="max-height: 187px;">
+                            <div class="card-body">
+                                <h5 class="card-title text-center text-bolder text-uppercase">Des défis & des rencontres
+                                    pour te révéler & grandir.</h5>
+                                {# <a href="#" class="btn btn-primary">ICI CTA</a> #}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-xs-12 my-3">
+                        <div class="card  hvr-bounce-in" style="height: 300px">
+                            <img class="card-img-top" src="{{ asset('assets/images/home_page/growthmindset.png') }}"
+                                 alt="youmoro_image" class="img-fluid">
+                            <div class="card-body">
+                                <h5 class="card-title text-center text-bolder text-uppercase">Des capsules audio & vidéos
+                                    pour apprendre et s'inspirer</h5>
+                                {# <a href="#" class="btn btn-primary">ICI CTA</a> #}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-xs-12 my-3">
+                        <div class="card  hvr-bounce-in" style="height: 300px">
+                            <img class="card-img-top" src="{{ asset('assets/images/home_page/balloons.png') }}"
+                                 alt="youmoro_image" class="img-fluid">
+                            <div class="card-body">
+                                <h5 class="card-title text-center text-bolder text-uppercase">Un journal de bord pour
+                                    piloter ta progression. </h5>
+                                {# <a href="#" class="btn btn-primary">ICI CTA</a> #}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
