@@ -38,6 +38,17 @@ class User implements UserInterface
      */
     private $password;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Buy::class, mappedBy="user")
+     */
+    private $buys;
+
+    public function __construct()
+    {
+        $this->buys = new ArrayCollection();
+    }
+
+
     public function getId(): ?int
     {
         return $this->id;
@@ -120,4 +131,37 @@ class User implements UserInterface
     {
         return $this->getEmail();
     }
+
+    /**
+     * @return Collection|Buy[]
+     */
+    public function getBuys(): Collection
+    {
+        return $this->buys;
+    }
+
+    public function addBuy(Buy $buy): self
+    {
+        if (!$this->buys->contains($buy)) {
+            $this->buys[] = $buy;
+            $buy->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeBuy(Buy $buy): self
+    {
+        if ($this->buys->contains($buy)) {
+            $this->buys->removeElement($buy);
+            // set the owning side to null (unless already changed)
+            if ($buy->getUser() === $this) {
+                $buy->setUser(null);
+            }
+        }
+
+        return $this;
+    }
+
+
 }

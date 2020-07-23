@@ -2,16 +2,16 @@
 
 {% block title %} Accueil{% endblock %}
 {% block body %}
-<div class="container">
-    <div style="height: 100px"></div>
+    <div class="container">
+        <div style="height: 100px"></div>
         <div class="col-12">
             <h1>Welcome TO The Jungle Circus</h1>
             <img class="img-fluid shadow-effect rounded" src="assets/images/jungle_LG.jpg" alt=""
-                     style="width: 100%; max-height: 250px;"
+                 style="width: 100%; max-height: 250px;"
             >
-         </div>
+        </div>
     </div>
-</div>
+    </div>
     <div class="container-fluid home-section p-5">
         <div class="container">
             <div data-aos="zoom-in-up"
@@ -41,71 +41,71 @@
             </div>
         </div>
     </div>
-<div class="container">
-    <div class="row my-5 border rounded p-5 bg-yellow shadow-effect">
-        <div class="col-12 text-center my-5">
-            <h2 class="title-page">The Owners</h2>
-        </div>
-        <div class="row">
+    <div class="container">
+        <div class="row my-5 border rounded p-5 bg-yellow shadow-effect">
+            <div class="col-12 text-center my-5">
+                <h2 class="title-page">The Owners</h2>
+            </div>
+            <div class="row">
 
-            <div class="col-lg-4 col-md-4 col-xs-12 my-3">
-                <div class="card  hvr-bounce-in" style="height: 250px">
-                    <img class="card-img-top" src="assets/images/girafe.jpg"
-                         alt="" class="img-fluid">
-                <div class="card-body">
-                        <h5 class="card-title text-center text-bolder text-uppercase text-info">Astrid</h5>
-                                {# <a href="#" class="btn btn-primary">ICI CTA</a> #}
+                <div class="col-lg-4 col-md-4 col-xs-12 my-3">
+                    <div class="card  hvr-bounce-in" style="height: 250px">
+                        <img class="card-img-top" src="assets/images/girafe.jpg"
+                             alt="" class="img-fluid">
+                        <div class="card-body">
+                            <h5 class="card-title text-center text-bolder text-uppercase text-info">Astrid</h5>
+                            {# <a href="#" class="btn btn-primary">ICI CTA</a> #}
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4 col-md-4 col-xs-12 my-3">
-                <div class="card  hvr-bounce-in" style="height: 200px">
-                    <img class="card-img-top" src="assets/images/Panthere.jpg"
-                         alt="" class="img-fluid">
-                    <div class="card-body">
-                                <h5 class="card-title text-center text-bolder text-uppercase text-info">Marianne</h5>
-                                {# <a href="#" class="btn btn-primary">ICI CTA</a> #}
-                            </div>
+                <div class="col-lg-4 col-md-4 col-xs-12 my-3">
+                    <div class="card  hvr-bounce-in" style="height: 200px">
+                        <img class="card-img-top" src="assets/images/Panthere.jpg"
+                             alt="" class="img-fluid">
+                        <div class="card-body">
+                            <h5 class="card-title text-center text-bolder text-uppercase text-info">Marianne</h5>
+                            {# <a href="#" class="btn btn-primary">ICI CTA</a> #}
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+    </div>
 
 
 
 
     <div class="banner">
-    <div class="container">
-        <div class="banner-text">
-            <div class="banner-heading">
-                <h1>
-                    <img src="{{ asset('assets/images/brand_horizontal.png') }}" width="600px" class="img-fluid"
-                         alt="youmoro">
-                </h1>
-            </div>
+        <div class="container">
+            <div class="banner-text">
+                <div class="banner-heading">
+                    <h1>
+                        <img src="{{ asset('assets/images/brand_horizontal.png') }}" width="600px" class="img-fluid"
+                             alt="youmoro">
+                    </h1>
+                </div>
 
-            <div data-aos="zoom-in-up" data-aos-duration="1000">
-                <div class="banner-sub-heading first-title text-uppercase">
-                    Des challenges pour un futur dont tu es le héros !
+                <div data-aos="zoom-in-up" data-aos-duration="1000">
+                    <div class="banner-sub-heading first-title text-uppercase">
+                        Des challenges pour un futur dont tu es le héros !
+                    </div>
+                    <div class="banner-sub-body second-title text-uppercase">
+                        <ul>
+                            <li>Une App mobile</li>
+                            <li>Pour relever tous les défis</li>
+                            <li>Et prendre le pouvoir sur ton avenir !</li>
+                        </ul>
+                        <hr>
+                    </div>
                 </div>
-                <div class="banner-sub-body second-title text-uppercase">
-                    <ul>
-                        <li>Une App mobile</li>
-                        <li>Pour relever tous les défis</li>
-                        <li>Et prendre le pouvoir sur ton avenir !</li>
-                    </ul>
-                    <hr>
-                </div>
+                {% if app.user == false %}
+                    <div class="">
+                        <a href="{{path('app_login')}}" class="btn btn-cta text-uppercase font-weight-bold hvr-bounce-in animate__animated animate__bounce">C'est parti !</a>
+                    </div>
+                {% endif %}
             </div>
-            {% if app.user == false %}
-                <div class="">
-                    <a href="{{path('app_login')}}" class="btn btn-cta text-uppercase font-weight-bold hvr-bounce-in animate__animated animate__bounce">C'est parti !</a>
-                </div>
-            {% endif %}
         </div>
-    </div>
     </div>
     <div class="container">
         <div data-aos="zoom-in-up"

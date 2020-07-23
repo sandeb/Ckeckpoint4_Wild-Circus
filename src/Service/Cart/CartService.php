@@ -69,7 +69,12 @@ Class CartService {
         return $total;
     }
 
+    public function video()
+    {
 
+
+
+    }
 
 
 
