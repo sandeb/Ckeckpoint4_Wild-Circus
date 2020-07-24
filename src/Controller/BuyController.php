@@ -24,22 +24,12 @@ class BuyController extends AbstractController
     /**
      * @Route("/myshow", name="show_my")
      */
-    public function showMyBuy(Request $request, Buy $buy, PoliticoRepository $politicoRepository)
+    public function showMyBuy(PoliticoRepository $politicoRepository)
     {
-        $form = $this->createForm(BuyType::class, $buy);
-        $form->handleRequest($request);
-
-        if($form->isSubmitted() && $form->isValid())
-        {
-            $this->getDoctrine()->getManager()->flush();
-            return $this->redirectToRoute('show_my',['id'=>$politicoRepository->getVideo()]);
-        }
-
 
         return $this->render('buy/myshow.html.twig', [
             'politicos' => $politicoRepository->findAll(),
-            'buy' => $buy,
-            'form' => $form->createView(),
+
         ]);
     }
 

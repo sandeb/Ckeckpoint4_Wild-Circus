@@ -3,32 +3,35 @@
 {% block title %}POLITICO{% endblock %}
 
 {% block body %}
-    <div class="bg-light p-3">
-        <h1>SHOWS</h1>
-    </div>
+    <div class="mt-5"><h1><br></h1></div>
     <div class="container">
-        <div class="row">
-            <div class="col-4 mt-4">
-                <div class="border border-dark rounded p-2 clearfix">
-                    {% for politico in politicos %}
-                        <div class="col-4 mt-4">
-                            <div class="border border-dark rounded p-2 clearfix">
-                                <h2>
-                                    {{ politico.title }}
-                                    -
-                                    {{ politico.price }}
-                                </h2>
-                                <img class="img-fluid rounded" src="{{ politico.video }}" alt="Image de {{ politico.title }}">
-                                <hr>
-                                <a href="{{ path('cart_add',{'id':politico.id}) }}" class="btn btn-success float-right">
-                                    <i class="fas fa-shopping-cart mr-1"></i>
-                                    Ajouter
-                                </a>
+        <h1>The Fight</h1>
+    </div>
+    <div class="mt-5"><h1><br></h1></div>
+    <div class="container">
+            <div class="row">
+                {% for politico in politicos %}
+                    <div class="col-lg-4 col-md-4 col-xs-12 mt-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title text-secondary">First Show</h5>
+                                <h5 class="card-title text-secondary">3฿</h5>
                             </div>
-                        </div>
-                </div>
+                            <h5 class="card-title text-secondary mt-2">Trump</h5>-VS.
+                            <img src="https://cdn.pixabay.com/photo/2019/10/31/15/21/weird-4592123_960_720.jpg" class="card-img-top" alt="...">
+                            <h3 class="card-title text-secondary mt-2">-VS.</h3>-VS.
+                            <h5 class="card-title text-secondary mt-2">	Kim Jong-un</h5>-VS.
+                            <img src="https://cdn.pixabay.com/photo/2020/01/23/12/03/clown-4787558_960_720.jpg" class="card-img-top" alt="...">
+                            <a href="{{ path('cart_add',{'id':politico.id}) }}" class="btn btn-secondary btn-lg active" ><i class="fas fa-shopping-cart mr-1"></i></a>
+                    </div>
+                {% endfor %}
             </div>
-            {% endfor %}
         </div>
     </div>
+    <div class="mt-5"><h1><br></h1></div>
 {% endblock %}
+
+
+
+
+

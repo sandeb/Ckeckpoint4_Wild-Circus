@@ -1,11 +1,12 @@
 {% extends 'base.html.twig' %}
+
 {% block title %} Accueil{% endblock %}
 {% block body %}
-<div class="mt-5"><h1><br></h1></div>
-<div class="container">
-    <h1>The Owners</h1>
-</div>
-<div class="mt-5"><h1><br></h1></div>
+    <div class="mt-5"><h1><br></h1></div>
+    <div class="container">
+        <h1>The Stars</h1>
+    </div>
+    <div class="mt-5"><h1><br></h1></div>
     <div class="container">
         <div data-aos="zoom-in-up"
              data-aos-duration="1000"
@@ -13,20 +14,20 @@
              data-aos-easing="ease-out-cubic"
              data-aos-duration="2000">
             <div class="row">
-                {% for owner in owners %}
+                {% for star in stars %}
                     <div class="col-lg-4 col-md-4 col-xs-12 mt-3">
                         <div class="card">
                             <div class="card-body">
-                                <h5 class="card-title text-secondary">{{ owner.nom }}</h5>
+                                <h5 class="card-title text-secondary">{{ star.name}}</h5>
                             </div>
-                            <img src="{{ owner.image }}" class="card-img-top" alt="...">
+                            <img src="{{ star.image }}" class="card-img-top" alt="...">
                         </div>
                     </div>
                 {% endfor %}
             </div>
         </div>
     </div>
-</div>
+    </div>
 {% endblock %}
 
 

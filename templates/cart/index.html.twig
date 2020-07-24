@@ -1,13 +1,12 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}CART{% endblock %}
-
 {% block body %}
-    <div class="bg-light p-3">
-        <h1>Votre panier</h1>
+    <div class="text-info">
+        <h1 class="text-info">Cart</h1lasstext-info>
     </div>
     {% if items | length >0 %}
-        <table class="table">
+        <table class="table text-white">
             <thead>
                 <tr>
                     <th>Show</th>
@@ -22,7 +21,7 @@
             {% for item in items %}
                 <tr>
                     <td>{{ item.politico.title }}</td>
-                    <td>{{ item.politico.price }}</td>
+                    <td>{{ item.politico.price }}฿</td>
                     <td>{{ item.quantity }}</td>
                     <td>{{ item.politico.price * item.quantity }}</td>
                     <td>
@@ -42,7 +41,7 @@
            <tfoot>
                <tr>
                    <td colspan="3 text-right">Total</td>
-                   <td> {{ total }}</td>
+                   <td> {{ total }}฿</td>
                    <td></td>
                </tr>
            </tfoot>
