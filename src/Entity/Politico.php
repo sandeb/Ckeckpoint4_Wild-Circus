@@ -45,6 +45,16 @@ class Politico
      */
     private $buy;
 
+    /**
+     * @ORM\OneToMany(targetEntity=Star::class, mappedBy="politico")
+     */
+    private $stars;
+
+    public function __construct()
+    {
+        $this->stars = new ArrayCollection();
+    }
+
 
 
 
@@ -115,5 +125,36 @@ class Politico
     public function __toString()
     {
         return $this->getTitle();
+    }
+
+    /**
+     * @return Collection|Star[]
+     */
+    public function getStars(): Collection
+    {
+        return $this->stars;
+    }
+
+    public function addStar(Star $star): self
+    {
+        if (!$this->stars->contains($star)) {
+            $this->stars[] = $star;
+            $star->setPolitico($this);
+        }
+
+        return $this;
+    }
+
+    public function removeStar(Star $star): self
+    {
+        if ($this->stars->contains($star)) {
+            $this->stars->removeElement($star);
+            // set the owning side to null (unless already changed)
+            if ($star->getPolitico() === $this) {
+                $star->setPolitico(null);
+            }
+        }
+
+        return $this;
     }
 }

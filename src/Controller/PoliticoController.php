@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Repository\PoliticoRepository;
+use App\Repository\StarRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -14,7 +15,8 @@ class PoliticoController extends AbstractController
     public function index(PoliticoRepository $politicoRepository)
     {
         return $this->render('politico/index.html.twig', [
-            'politicos' => $politicoRepository->findAll()
+            'politicos' => $politicoRepository->findAll(),
+
         ]);
     }
 

@@ -51,17 +51,6 @@ class CartController extends AbstractController
         return $this->redirectToRoute("cart");
     }
 
-    /**
-     * @Route("/cart/buy", name="cart_buy")
-     *
-     */
-    public function video(CartService $cartService)
-    {
-        $cart=$this->session->get('cart',[]);
-
-        dd($cart);
-    }
-
 }
 
 
